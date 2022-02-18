@@ -7,39 +7,34 @@ import ReviewForm from "./review-form";
 export default class MovieList extends React.Component {
     render() {
 
-        let friesReviews = [
-            {
-                user:'Sam',
-                comment:'So delicious!',
-                stars:'5'
+        let movies = [
+            {           
+                title: 'Encanto',
+                image: 'img1',
+                synopsis: 'The Madrigals are an extraordinary family who live hidden in the mountains of Colombia in a charmed place called the Encanto. The magic of the Encanto has blessed every child in the family with a unique gift -- every child except Mirabel. However, she soon may be the Madrigals last hope when she discovers that the magic surrounding the Encanto is now in danger.',
+                review: 'love this movie'
             },
             {
-                user:'Alejandro',
-                comment:'could be better',
-                stars:'3'
+                title: 'Moana',
+                image: 'img2',
+                synopsis: 'An adventurous teenager sails out on a daring mission to save her people. During her journey, Moana meets the once-mighty demigod Maui, who guides her in her quest to become a master way-finder. Together they sail across the open ocean on an action-packed voyage, encountering enormous monsters and impossible odds. Along the way, Moana fulfills the ancient quest of her ancestors and discovers the one thing she always sought: her own identity.',
+                review: 'love this movie'
             },
             {
-                user:'Evelyn',
-                comment:'Perfectly seasoned, but soggy',
-                stars:'3.75'
+                title: 'Frozen',
+                image: 'img3',
+                synopsis: 'When their kingdom becomes trapped in perpetual winter, fearless Anna (Kristen Bell) joins forces with mountaineer Kristoff (Jonathan Groff) and his reindeer sidekick to find Anna\'s sister, Snow Queen Elsa (Idina Menzel), and break her icy spell. Although their epic journey leads them to encounters with mystical trolls, a comedic snowman (Josh Gad), harsh conditions, and magic at every turn, Anna and Kristoff bravely push onward in a race to save their kingdom from winter\'s cold grip.',
+                review: []
             }
         ];
 
-        // movies.forEach((movie) => {
-        //     console.log(movie.title, movie.image, movie.synopsis, movie.review);
-        // });
-
         return(
             <div className="container">
-                <h1>Encanto</h1>
-                <Movie {...{reviews: friesReviews, image:'Sweet Potato Fries', synopsis: 'sweet potatoes that are fried'}}  />
-                <h1>Moana</h1>
-                <Movie {...{title:'Moana', image:'img1', synopsis:'island girl'}} />
-                {/* <Movie {...{movies}}/>  */}
-                {/* <Movie test="testing"/> */}
-                {/* <StarRating/> */}
-                {/* <ReviewForm /> */}
-                
+
+                <Movie {...{movies}}/> 
+                <StarRating/>
+                <ReviewForm />
+
 
             </div>
         )
