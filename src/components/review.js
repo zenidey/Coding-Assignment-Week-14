@@ -1,4 +1,5 @@
 import React from "react";  
+import $ from "jquery";
 import Movie from "./movie";
 import ReviewForm from "./review-form";
 
