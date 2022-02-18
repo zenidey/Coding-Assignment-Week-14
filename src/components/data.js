@@ -17,6 +17,10 @@ export default class Data extends React.Component {
                 {this.props.synopsis} <br/>
                 {this.props.review}
                 </div>
+                <div className="card-footer">
+                Review
+                Review Form
+                </div>
             </div>
         );
 
