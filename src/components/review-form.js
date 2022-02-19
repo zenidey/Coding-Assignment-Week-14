@@ -1,44 +1,83 @@
 import React from "react";  
 import Movie from "./movie";
 
+export default class ReviewForm extends React.Component{ 
 
-export default class ReviewForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state ={
-            review: props.review,
-        };
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+    onTrigger = (event) => { 
 
-    handleClick() {
-        this.setState(state => ({review: state.review}));
-    }
+        this.props.parentCallback(event.target.review.value); 
+        event.preventDefault(); 
+
+    } 
+
+  
+
+    render(){ 
+
+        return( 
+
+        <div> 
+
+            <form onSubmit = {this.onTrigger}> 
+
+                <input type = "text" 
+
+                review = "review" placeholder = "Enter Review"/> 
+                <br></br><br></br> 
+
+                <input type = "submit" value = "Submit"/> 
+                <br></br><br></br> 
+
+            </form> 
+
+        </div> 
+
+        ) 
+
+    } 
+} 
+
+
+
+
+// export default class ReviewForm extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state ={
+    //         review: props.review,
+    //     };
+
+//         this.handleClick = this.handleClick.bind(this);
+//     }
+
+//     handleClick() {
+//         this.setState(state => ({review: state.review}));
+//     }
 
     
-    render(){
-        return(
+//     render(){
+//         return(
             
-            <div className="container">
+//             <div className="container">
 
-                <form className="form mx-auto m-5"> 
+//                 <form className="form mx-auto m-5"> 
 
-                    <label>Review Form: <input type="text" id="new-text" placeholder="Write your review here"></input></label> <br />
+//                     <label>Review Form: <input type="text" id="new-text" placeholder="Write your review here"></input></label> <br />
                     
-                    <button  
-                    id="add"
-                    className="btn btn-primary"
-                    onClick={this.handleClick}>
-                    {this.state.review} Add Review</button>
+//                     <button  
+//                     id="add"
+//                     className="btn btn-primary"
+//                     onClick={this.handleClick}>
+//                     {this.state.review} Add Review</button>
 
-                </form>
+//                 </form>
 
-            </div>
-        );
-    }
+//             </div>
+//         );
+//     }
     
-}
+// }
 
 
 // let button = document.getElementById("btn");
@@ -54,3 +93,7 @@ export default class ReviewForm extends React.Component {
 //     parent.appendChild(newElement);
 //     document.getElementById("new-text").value = " ";
 // });
+
+
+  
+

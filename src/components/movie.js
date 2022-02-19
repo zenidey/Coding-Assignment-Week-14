@@ -6,8 +6,9 @@ export default class Movie extends React.Component {
         super(props);
         this.state = {
             movies: props.movies,
-            test: props.test
+            review: ''
         };
+
     }
 
     render() {

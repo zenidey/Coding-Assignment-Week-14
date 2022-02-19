@@ -7,11 +7,7 @@ import ReviewForm from "./review-form";
 
 export default class Review extends React.Component{
     render(){
-        return(
-
-            // <div id="paragraphs">
-            //     <p id="content"></p>
-            // </div>   
+        return(  
 
             <div className="card w-75">
                 <div className="card-header bg-success text-white">
