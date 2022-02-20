@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import Movie from './components/movie';
-import MovieList from './components/movie-list';
+import MovieApp from './components/movie-app';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <MovieList />,
+    <MovieApp />,
   document.getElementById('root')
 );
 

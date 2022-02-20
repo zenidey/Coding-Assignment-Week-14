@@ -1,36 +1,26 @@
-import React from "react";  
-import Movie from "./movie";
+import React from "react"; 
 
 export default class ReviewForm extends React.Component{ 
-
-
+    
     onTrigger = (event) => { 
-
-        this.props.parentCallback(event.target.review.value); 
+        this.props.handleCallback(event.target.newReview.value); 
         event.preventDefault(); 
-
     } 
-
-  
 
     render(){ 
 
         return( 
 
-        <div> 
+            //ReviewForm calls the Review's callback function using props and passes the data to Review
 
+        <div> 
             <form onSubmit = {this.onTrigger}> 
 
-                <input type = "text" 
-
-                review = "review" placeholder = "Enter Review"/> 
-                <br></br><br></br> 
-
-                <input type = "submit" value = "Submit"/> 
-                <br></br><br></br> 
+                <textarea className="form-control" rows="3" type="text" name="newReview" placeholder="Enter Review"/> <br/>
+                <button className="btn btn-secondary btn-sm float-right mb-2" type="submit" value="Submit"> post review </button>
 
             </form> 
-
+            
         </div> 
 
         ) 
@@ -38,62 +28,4 @@ export default class ReviewForm extends React.Component{
     } 
 } 
 
-
-
-
-// export default class ReviewForm extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state ={
-    //         review: props.review,
-    //     };
-
-//         this.handleClick = this.handleClick.bind(this);
-//     }
-
-//     handleClick() {
-//         this.setState(state => ({review: state.review}));
-//     }
-
-    
-//     render(){
-//         return(
-            
-//             <div className="container">
-
-//                 <form className="form mx-auto m-5"> 
-
-//                     <label>Review Form: <input type="text" id="new-text" placeholder="Write your review here"></input></label> <br />
-                    
-//                     <button  
-//                     id="add"
-//                     className="btn btn-primary"
-//                     onClick={this.handleClick}>
-//                     {this.state.review} Add Review</button>
-
-//                 </form>
-
-//             </div>
-//         );
-//     }
-    
-// }
-
-
-// let button = document.getElementById("btn");
-// let content = document.getElementById("content"); 
-
-// let id = 0;
-
-// document.getElementById("add").addEventListener("click", () => {
-//     var parent = document.getElementById("paragraphs");
-//     var newElement = document.createElement("p");
-//     newElement.innerHTML = document.getElementById("new-text").value;
-//     newElement.setAttribute("id", id++);
-//     parent.appendChild(newElement);
-//     document.getElementById("new-text").value = " ";
-// });
-
-
-  
 

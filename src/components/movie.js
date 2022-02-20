@@ -5,28 +5,26 @@ export default class Movie extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies: props.movies,
-            review: ''
+            movies: props.movies   // gives access to movies and its properties at current state (although this has been hard-coded)
         };
-
     }
 
     render() {
 
         let movies;
         if(this.state.movies) {
-            movies = this.state.movies.map((movie, index) => <Movie key={index} {...movie} />);
+            movies = this.state.movies.map((currentMovie, index) => <MovieList key={index} {...currentMovie} />);
         }
+        // setting the elements array index as the key
+        // map through the array movies, take the currentMovie and it's index, for each instance of MovieList attach key=index to the currentMovie
 
         return(
+
             <div>
             {movies}
-
-            <h1 className="container border text-center my-5">{this.props.title}</h1>
-            <h3>{this.props.image}</h3>
-            <h6>{this.props.synopsis}</h6>
-
+            {/* Returning each object(movie) within movies with a unique key*/}
             </div>
+
         )
     }
 }
